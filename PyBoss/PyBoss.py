@@ -1,3 +1,7 @@
+#import packages
+import os
+import csv
+
 #python dict of abbreviated US States
 us_state_abbrev = {
     'Alabama': 'AL',
@@ -52,12 +56,8 @@ us_state_abbrev = {
     'Wyoming': 'WY',
 }
 
-#import packages
-import os
-import csv
-
 #create file path for csv file
-csvpath = os.path.join('employee_data.csv')
+csvpath = os.path.join('Resources/employee_data.csv')
 
 #open and read csv file
 with open(csvpath) as csvfile:
@@ -90,7 +90,7 @@ with open(csvpath) as csvfile:
 zipped_data = zip(emp_id, fname, lname, dob, ssn, state)
 
 # save the output file path
-output_file = os.path.join("formatted_employee_data.csv")
+output_file = os.path.join("output","formatted_employee_data.csv")
 
 # open the output file, create a header row, and then write the zipped object to the csv
 with open(output_file, "w") as datafile:
